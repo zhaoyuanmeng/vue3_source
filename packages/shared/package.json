@@ -4,9 +4,9 @@
   "main": "index.js",
   "module": "dist/shared.esm-bundler.js",
   "license": "MIT",
-  "buildOptions":{
-    "name":"VueShared",
-    "formats":[
+  "buildOptions": {
+    "name": "VueShared",
+    "formats": [
       "cjs",
       "esm-bundler"
     ]

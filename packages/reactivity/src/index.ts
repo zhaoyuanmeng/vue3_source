@@ -1,1 +1,7 @@
-export const a = 100
+// 导出方法 不实现功能
+export {
+  reactive,
+  shallowReactive,
+  readonly,
+  shallowReadonly,
+} from "./reactive";
