@@ -24,7 +24,7 @@ function createGetter(isReadonly: boolean = false, isShallow: boolean = false) {
     if (isShallow) {
       return res;
     }
-    // vue2是一上来就递归没有条件 vue3是readonly为false的时候会进行代理 懒模式
+    // vue2是一上来就递归没有条件 vue3是get的时候 readonly为false的时候会进行代理 懒模式
     if (isObject(res)) {
       return isReadonly ? readonly(res) : reactive(res);
     }
