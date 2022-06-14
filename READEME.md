@@ -19,3 +19,6 @@ npx tsc --init
 ## sourcemap 文件是为了调试的 因为打包完那些模块的都被转义了 而 sourcemap 还是原来的代码可以调试
 
 ## Reflect 好处 后续 object 的方法会迁移到 Reflect 上，还有返回值
+
+
+## rollup.config.js这个文件只有调用execa("rollup", ["-c", "--environment", `Target:${target}`]的时候才会去执行那个

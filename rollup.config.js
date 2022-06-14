@@ -5,6 +5,7 @@ import path from "path";
 // 引入插件
 import json from "@rollup/plugin-json";
 
+// 与位置有关的插件
 import resolvePlus from "@rollup/plugin-node-resolve";
 
 import ts from "rollup-plugin-typescript2";
@@ -19,6 +20,7 @@ const packageDir = path.resolve(packagesDir, process.env.Target);
 
 const resolve = (p) => path.resolve(packageDir, p);
 
+// 拿到配置信息
 let pckJson = require(resolve("package.json"));
 
 // reactivity
@@ -42,7 +44,9 @@ const config = {
 
 // package.json定义的
 const options = pckJson.buildOptions;
+// options: { name: 'VueShared', formats: [ 'cjs', 'esm-bundler' ] }
 
+// 打包逻辑
 function toRollup(format, config) {
   config.name = options.name;
   config.sourcemap = true;
@@ -59,7 +63,7 @@ function toRollup(format, config) {
     ],
   };
 }
-
+console.log("rollup--config");
 // rollup 最终需要导出
 export default options.formats.map((format) => {
   // 去打包
