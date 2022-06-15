@@ -27,7 +27,7 @@ export function shallowReadonly(target: any) {
 
 // 抽离出来的 是不是仅读 是不是深度 共性
 // 考察设计模式了 （柯里化）
-  
+
 // 核心是利用proxy 拦截数据的读取和数据的修改
 export function createReactiveObject(
   target: Object,
