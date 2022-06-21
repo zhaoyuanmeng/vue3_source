@@ -43,5 +43,6 @@ export function createReactiveObject(
   if (existProxy) return existProxy;
   const proxy = new Proxy(target, baseHandler);
   proxyMap.set(target, proxy);
+
   return proxy;
 }
