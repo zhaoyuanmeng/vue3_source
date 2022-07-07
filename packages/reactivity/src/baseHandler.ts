@@ -15,7 +15,8 @@ const readOnlySet = {
 function createGetter(isReadonly: boolean = false, isShallow: boolean = false) {
   // receiver是proxy本身
   return function get(target, key, receiver) {
-    // proxy + reflect(反射)
+    // proxy + reflect(反射) 原因是proxy本身的this问题 reflect他里面的第三个参数展示了是谁调用的自己
+    // 从而保证this的指向没有错
     const res = Reflect.get(target, key, receiver); //等价于target[key]
 
     if (!isReadonly) {
